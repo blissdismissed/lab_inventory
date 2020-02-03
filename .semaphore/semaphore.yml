@@ -14,7 +14,7 @@ blocks:
         - name: RAILS_ENV
           value: test
       jobs:
-      - name: Test
+      - name: Rspec
         commands:
           - checkout
           - sem-service start postgres 11
@@ -24,3 +24,11 @@ blocks:
           - cache store
           - bundle exec rake db:setup
           - bundle exec rspec
+      - name: Rubocop
+        commands:
+          - checkout
+          - sem-version ruby 2.6.5
+          - cache restore
+          - bundle install --deployment --path vendor/bundle
+          - cache store
+          - bundle exec rubocop
