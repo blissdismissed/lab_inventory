@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe Item do
-  
   describe 'validations' do
     subject do
       item.valid?
@@ -13,12 +14,12 @@ describe Item do
         name: 'Ardunio',
         quantity: 1,
         room_location: 'ET 382',
-        where_in_room: 'Electronics Cabinet',
+        where_in_room: 'Electronics Cabinet'
       }
     end
 
     context 'when the parameters are valid' do
-      it "should have no errors" do
+      it 'should have no errors' do
         expect(subject.messages).to eq({})
       end
     end
