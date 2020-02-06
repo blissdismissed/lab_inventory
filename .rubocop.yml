@@ -10,3 +10,12 @@ Layout/LineLength:
     - 'bin/**/*'
     - 'config/**/*'
     - 'db/*'
+  
+Style/NumericLiterals:
+  Exclude:
+    - 'db/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
