@@ -1,4 +1,5 @@
-require "rails_helper"
+require 'rails_helper'
+require 'faker'
 
 describe "CRUD items", type: :request do
   let(:item) { Item.new(item_attrs) }
@@ -18,6 +19,7 @@ describe "CRUD items", type: :request do
     item_2 = FactoryBot.create(:item)
     puts(item.name)
     puts(item_2.name)
+    puts(Faker::Name.name)
 
     get items_path # Route
     # expect(response).to render_template(:index) # items/index.html.erb
