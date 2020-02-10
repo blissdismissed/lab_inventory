@@ -14,8 +14,10 @@ describe "CRUD items", type: :request do
   it "access /items#index" do
     item = FactoryBot.create(:item)
     # Find a way to define the factory so that each Item
-    # has a unique name.
-    item_2 = FactoryBot.create(:item, name: 'New Name')
+    # has a unique name. LA FUACKERIA
+    item_2 = FactoryBot.create(:item)
+    puts(item.name)
+    puts(item_2.name)
 
     get items_path # Route
     # expect(response).to render_template(:index) # items/index.html.erb

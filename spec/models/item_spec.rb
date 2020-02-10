@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 describe Item do
-  describe 'validations' do
+  describe 'validations' do 
     subject do
       item.valid?
       item.errors
