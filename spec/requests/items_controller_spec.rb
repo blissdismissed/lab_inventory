@@ -17,9 +17,9 @@ describe "CRUD items", type: :request do
     # Find a way to define the factory so that each Item
     # has a unique name. LA FUACKERIA
     item_2 = FactoryBot.create(:item)
-    puts(item.name)
-    puts(item_2.name)
-    puts(Faker::Name.name)
+    # puts(item.name)
+    # puts(item_2.name)
+    # puts(Faker::Name.name)
 
     get items_path # Route
     # expect(response).to render_template(:index) # items/index.html.erb
