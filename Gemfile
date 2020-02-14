@@ -37,6 +37,7 @@ group :development, :test do
   gem 'faker'
   gem 'rspec-rails', '~> 4.0.0.beta'
   gem 'rubocop', require: false
+  gem 'rails-controller-testing'
 end
 
 group :development do

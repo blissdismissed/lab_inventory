@@ -2,8 +2,8 @@
 
 FactoryBot.define do
   factory :item do
-    sequence(:name) { |n| "Item-#{n}" }
-    quantity { 5 }
+    name { Faker::Appliance.equipment }
+    quantity { Faker::Number.number(digits: 1) }
     room_location { 'ET 382' }
     where_in_room { 'Electronics Cabinet' }
   end

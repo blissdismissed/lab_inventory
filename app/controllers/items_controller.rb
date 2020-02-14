@@ -3,5 +3,6 @@
 class ItemsController < ApplicationController
   def index
     @all_items = Item.all
+    @hello = 'World'
   end
 end
