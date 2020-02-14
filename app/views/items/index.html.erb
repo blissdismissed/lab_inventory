@@ -1,0 +1,12 @@
+<p>Sup Wu Tang</p>
+
+  <table>
+    <% @all_items.each do |f| %>
+      <tr>
+        <td><%= f.name %></td>
+        <td><%= f.quantity %></td>
+        <td><%= f.room_location %></td>
+        <td><%= f.where_in_room %></td>
+      </tr>
+    <% end %>
+  </table>
