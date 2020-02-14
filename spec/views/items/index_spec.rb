@@ -14,7 +14,7 @@ describe 'items/index', type: :view do
   end
 
   it 'should render' do
-    all_items.each do |item|
+    all_items.map do |item|
       expect(subject).to match(item.name)
       expect(subject).to match(item.quantity.to_s)
       expect(subject).to match(item.room_location)
