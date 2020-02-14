@@ -1,7 +1,8 @@
-describe 'items/index', type: :view do
+# frozen_string_literal: true
 
+describe 'items/index', type: :view do
   subject do
-    render # render the html 
+    render # render the html
     rendered # return what got rendered
   end
 
@@ -15,10 +16,9 @@ describe 'items/index', type: :view do
   it 'should render' do
     all_items.each do |item|
       expect(subject).to match(item.name)
-      expect(subject).to match(item.quantity.to_s)   
+      expect(subject).to match(item.quantity.to_s)
       expect(subject).to match(item.room_location)
       expect(subject).to match(item.where_in_room)
     end
   end
-
 end

@@ -4,18 +4,16 @@ require 'rails_helper'
 require 'faker'
 
 describe ItemsController, type: :controller do
-
   it 'access /items#index' do
-    item = FactoryBot.create(:item)
+    # item = FactoryBot.create(:item)
     # Find a way to define the factory so that each Item
     # has a unique name. LA FUACKERIA
-    item2 = FactoryBot.create(:item)
+    # item2 = FactoryBot.create(:item)
     # puts(item.name)
     # puts(item2.name)
     # puts(Faker::Name.name)
 
     get :index # Route
-    
     expect(assigns[:all_items]).to eq(Item.all)
     expect(assigns[:hello]).to eq('World')
     expect(response).to render_template(:index) # items/index.html.erb
