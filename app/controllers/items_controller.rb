@@ -5,4 +5,11 @@ class ItemsController < ApplicationController
     @all_items = Item.all
     @hello = 'World'
   end
+
+  def new
+  end
+
+  def create
+  end
+  
 end
