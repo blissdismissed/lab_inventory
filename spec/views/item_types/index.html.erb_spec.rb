@@ -9,7 +9,7 @@ RSpec.describe "item_types/index", type: :view do
         description: "Description"
       ),
       ItemType.create!(
-        name: "Name",
+        name: "Boom",
         category: "Category",
         description: "Description"
       )
@@ -18,7 +18,8 @@ RSpec.describe "item_types/index", type: :view do
 
   it "renders a list of item_types" do
     render
-    assert_select "tr>td", text: "Name".to_s, count: 2
+    assert_select "tr>td", text: "Name".to_s, count: 1
+    assert_select "tr>td", text: "Boom".to_s, count: 1
     assert_select "tr>td", text: "Category".to_s, count: 2
     assert_select "tr>td", text: "Description".to_s, count: 2
   end
