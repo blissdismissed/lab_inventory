@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :item_type do
-    name { "MyString" }
-    category { "MyString" }
-    description { "MyString" }
+    name { Faker::Appliance.equipment }
+    category { 'FDM' }
+    description { 'This is a 3D printer' }
   end
 end

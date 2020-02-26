@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class ItemTypesController < ApplicationController
-  before_action :set_item_type, only: [:show, :edit, :update, :destroy]
+  before_action :set_item_type, only: %i[show edit update destroy]
 
   # GET /item_types
   # GET /item_types.json
@@ -9,8 +11,7 @@ class ItemTypesController < ApplicationController
 
   # GET /item_types/1
   # GET /item_types/1.json
-  def show
-  end
+  def show; end
 
   # GET /item_types/new
   def new
@@ -18,8 +19,7 @@ class ItemTypesController < ApplicationController
   end
 
   # GET /item_types/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /item_types
   # POST /item_types.json
@@ -62,13 +62,14 @@ class ItemTypesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_item_type
-      @item_type = ItemType.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def item_type_params
-      params.require(:item_type).permit(:name, :category, :description)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_item_type
+    @item_type = ItemType.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def item_type_params
+    params.require(:item_type).permit(:name, :category, :description)
+  end
 end

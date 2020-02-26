@@ -1,1 +1,3 @@
-json.partial! "item_types/item_type", item_type: @item_type
+# frozen_string_literal: true
+
+json.partial! 'item_types/item_type', item_type: @item_type
