@@ -40,6 +40,7 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 4.0.0.beta'
   gem 'rubocop', require: false
+  gem 'shoulda-matchers'
 end
 
 group :development do

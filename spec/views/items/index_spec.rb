@@ -6,7 +6,10 @@ describe 'items/index', type: :view do
     rendered # return what got rendered
   end
 
-  let(:all_items) { FactoryBot.create_list(:item, 3) }
+  let(:all_items) do
+    FactoryBot.create_list(:item_type, 1)
+    FactoryBot.create_list(:item, 3) # Keeps giving an error of 'item_type must exist'
+  end
 
   before do
     # same as @all_items = []
@@ -16,7 +19,6 @@ describe 'items/index', type: :view do
   it 'should render' do
     all_items.map do |item|
       expect(subject).to match(item.name)
-      expect(subject).to match(item.quantity.to_s)
       expect(subject).to match(item.room_location)
       expect(subject).to match(item.where_in_room)
     end

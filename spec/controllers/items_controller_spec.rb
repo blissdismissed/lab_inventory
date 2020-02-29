@@ -31,4 +31,13 @@ describe ItemsController, type: :controller do
 
   #   expect(response).to redirect_to login_url
   # end
+  it 'access /items/new' do
+    get :new
+    expect(response).to render_template(:new)
+  end
+
+  it 'access /items#create' do
+    get :new
+    expect(response).to render_template(:new)
+  end
 end

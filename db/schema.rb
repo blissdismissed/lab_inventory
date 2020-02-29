@@ -12,15 +12,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_06_015831) do
+ActiveRecord::Schema.define(version: 2020_02_25_013514) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
-  create_table 'items', force: :cascade do |t|
+
+  create_table 'item_types', force: :cascade do |t|
     t.string 'name', null: false
-    t.integer 'quantity', null: false
+    t.string 'category', null: false
+    t.string 'description'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+  end
+
+  create_table 'items', force: :cascade do |t|
     t.string 'room_location', null: false
     t.string 'where_in_room', null: false
     t.datetime 'created_at', precision: 6, null: false
     t.datetime 'updated_at', precision: 6, null: false
+    t.integer 'item_type_id'
+    t.string 'name'
   end
 end
