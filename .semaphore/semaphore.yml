@@ -23,7 +23,6 @@ blocks:
           - bundle install --deployment --path vendor/bundle
           - cache store
           - bundle exec rake db:setup
-          - rake assets:precompile
           - bundle exec rspec
       - name: Rubocop
         commands:
